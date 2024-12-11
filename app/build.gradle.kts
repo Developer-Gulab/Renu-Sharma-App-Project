@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.renuSh.renusharmaappproject"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.renuSh.renusharmaappproject"

@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.renush.privacy"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 27

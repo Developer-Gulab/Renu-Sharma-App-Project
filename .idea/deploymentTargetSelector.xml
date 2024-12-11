@@ -5,7 +5,7 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="onboarding">
+      <SelectionState runConfigName="NavDrawer">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
