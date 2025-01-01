@@ -38,7 +38,7 @@ fun DrawerContent(){
 
         Column (modifier = Modifier.fillMaxWidth().clip(
             RoundedCornerShape(topStart = 0.dp, topEnd = 0.dp, bottomStart = 0.dp, bottomEnd = 30.dp)
-        ) .height(200.dp).background(Color.Blue),){
+        ) .height(200.dp).background(Color.Blue.copy(alpha = 0.7f)),){
             Icon(imageVector = Icons.Default.AccountCircle, contentDescription = null, tint = Color.White,  modifier = Modifier.size(100.dp))
             Text("Jhone Doe",  color = Color.White , fontWeight = FontWeight.Bold,modifier = Modifier.padding(start = 12.dp))
             Text("jhondoe@gmai.com",  color = Color.White , fontWeight = FontWeight.Bold,modifier = Modifier.padding(start = 12.dp))
