@@ -91,9 +91,10 @@ fun TaskSubmittedScreen(navController: NavController) {
                             modifier = Modifier
                                 .size(width = 252.dp, height = 94.dp)
                                 .align(Alignment.CenterHorizontally),
-                            fontWeight = FontWeight.Medium,
                             fontSize = 32.sp,
-                            textAlign = TextAlign.Center
+                            textAlign = TextAlign.Center,
+                            fontWeight = FontWeight.Medium,
+                            lineHeight = 32.sp
                         )
                     }
 

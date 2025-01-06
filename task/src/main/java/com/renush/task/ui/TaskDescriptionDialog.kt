@@ -19,19 +19,18 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.runtime.getValue
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.renush.task.viewmodel.TaskDescriptionViewModel
-import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
 
 
 @Composable
@@ -48,7 +47,7 @@ fun TaskDescriptionDialog(viewModel: TaskDescriptionViewModel = viewModel(), onD
                     .padding(16.dp),
                 shape = RoundedCornerShape(30.dp),
                 colors = CardDefaults.cardColors(
-                    containerColor = Color(0xFFFFFFFF))
+                    containerColor = MaterialTheme.colorScheme.surface)
             ) {
                 Column(
                     modifier = Modifier

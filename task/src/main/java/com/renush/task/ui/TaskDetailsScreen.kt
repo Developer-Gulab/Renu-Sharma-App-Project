@@ -88,7 +88,7 @@ fun TaskDetailsScreen(viewModel: TaskViewModel = viewModel(), navController: Nav
                     modifier = Modifier
                         .size(width = 339.dp, height = 239.dp),
                     colors = CardDefaults.cardColors(
-                        containerColor = Color(0xFFFFFFFF)),
+                        containerColor = MaterialTheme.colorScheme.surface),
                     elevation = CardDefaults.cardElevation(8.dp),
                     shape = RoundedCornerShape(10.dp)
                 ) {
@@ -131,7 +131,10 @@ fun TaskDetailsScreen(viewModel: TaskViewModel = viewModel(), navController: Nav
 
 
                             Text(
-                                text = currentTask.details
+                                text = currentTask.details,
+                                fontSize = 12.sp,
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = FontWeight.Normal
                             )
 
                             Spacer(modifier = Modifier.weight(1f))
