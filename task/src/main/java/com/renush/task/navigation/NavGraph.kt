@@ -8,6 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.renush.task.ui.PDFUploadScreen
+import com.renush.task.ui.ReportScreen
+import com.renush.task.ui.ReportSubmittedScreen
 import com.renush.task.ui.TaskDetailsScreen
 import com.renush.task.ui.TaskSubmittedScreen
 import com.renush.task.viewmodel.TaskViewModel
@@ -27,6 +29,12 @@ fun NavGraph(modifier: Modifier, navController: NavController){
         }
         composable(Routes.Submitted.routes) {
             TaskSubmittedScreen(navController)
+        }
+        composable(Routes.Report.routes) {
+            ReportScreen(navController)
+        }
+        composable(Routes.ReportSubmitted.routes) {
+            ReportSubmittedScreen(navController)
         }
     }
 }

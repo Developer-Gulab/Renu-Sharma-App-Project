@@ -1,6 +1,7 @@
 package com.renush.task.ui
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -48,8 +51,9 @@ import com.renush.task.viewmodel.TaskViewModel
 fun TaskDetailsScreen(viewModel: TaskViewModel = viewModel(), navController: NavController) {
 
     val task by viewModel.task.observeAsState()
-
     var showDialog by remember { mutableStateOf(false) }
+    var isMenuExpanded by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
@@ -100,7 +104,7 @@ fun TaskDetailsScreen(viewModel: TaskViewModel = viewModel(), navController: Nav
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth(),
-                                horizontalArrangement = Arrangement.Absolute.SpaceBetween
+                                horizontalArrangement = Arrangement.SpaceBetween
                             ) {
                                 Column {
                                     Text(currentTask.title,
@@ -114,12 +118,30 @@ fun TaskDetailsScreen(viewModel: TaskViewModel = viewModel(), navController: Nav
                                         fontWeight = FontWeight.Normal,
                                     )
                                 }
-                                IconButton(onClick = {
-                                    /* handle Icon button */
-                                },
-                                ) {
-                                    Icon(Icons.Default.MoreVert, contentDescription = "MoreVert")
+
+                                Box{
+                                    IconButton(onClick = {
+                                        isMenuExpanded = true
+                                    }) {
+                                        Icon(Icons.Default.MoreVert, contentDescription = "More Options")
+                                    }
+
+                                    DropdownMenu(
+                                        expanded = isMenuExpanded,
+                                        onDismissRequest = { isMenuExpanded = false },
+                                        modifier = Modifier
+                                            .size(width = 70.dp, height = 50.dp)
+                                    ) {
+                                        DropdownMenuItem(
+                                            text = { Text("Report")},
+                                            onClick = {
+                                                isMenuExpanded = false
+                                                navController.navigate(Routes.Report.routes)
+                                            }
+                                        )
+                                    }
                                 }
+
                             }
 
                             Text(
